@@ -101,3 +101,15 @@ Company.prototype.calculateTotalPayroll = function() {
 // Test Case:
 console.log(company.calculateTotalPayroll());
 // Expected output: 165600
+
+//Task 5: Implementing Promotions
+Company.prototype.promoteToManager = function(employee, teamSize) {
+  // Convert the employee to a Manager by changing its prototype and adding teamSize
+  Object.setPrototypeOf(employee, Manager.prototype);
+  employee.teamSize = teamSize;
+};
+
+// Test Case:
+company.promoteToManager(emp1, 3);
+company.listEmployees();
+// Expected output: "Manager: Alice Johnson, ID: 101, Department: Sales, Salary: $5000, Team Size: 3"
